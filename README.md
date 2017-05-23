@@ -8,3 +8,18 @@ AlphaVSS, written in C# and C++/CLI provides a managed interface to this API.
 The goal of AlphaVSS is to provide an interface that is simple to use from any .NET application, yet provides the full functionality of VSS.
 
 For more information see [http://alphavss.alphaleonis.com](http://alphavss.alphaleonis.com)
+
+
+
+
+FileStream inf = new FileStream("path1", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            FileStream outf = new FileStream("path2", FileMode.Create);
+            int a;
+            while ((a = inf.ReadByte()) != -1)
+            {
+                outf.WriteByte((byte)a);
+            }
+            inf.Close();
+            inf.Dispose();
+            outf.Close();
+            outf.Dispose();
